@@ -1,5 +1,5 @@
 #!/bin/sh
-source venv/bin/activate
+/bin/bash -c "source venv/bin/activate"
 flask db upgrade
 flask translate compile
 exec gunicorn -b :5000 --access-logfile - --error-logfile - bank_balance:app
